@@ -1,19 +1,19 @@
-import EventInfoView from './view/event-info-view.js';
+import PointInfoView from './view/point-info-view.js';
 import FilterView from './view/filter-view.js';
 import {render, RenderPosition} from './render.js';
-import EventsPresenter from './presenter/events-presenter.js';
+import PointsPresenter from './presenter/points-presenter.js';
 
-const eventInfoContainer = document.querySelector('.trip-main');
+const pointInfoContainer = document.querySelector('.trip-main');
 const filterContainer = document.querySelector('.trip-controls__filters');
-const siteEventsContainer = document.querySelector('.trip-events');
+const sitePointsContainer = document.querySelector('.trip-events');
 
-const eventsPresenter = new EventsPresenter({
-  eventsContainer: siteEventsContainer
+const pointsPresenter = new PointsPresenter({
+  pointsContainer: sitePointsContainer
 });
 
-const eventInfoComponent = new EventInfoView();
-render(eventInfoComponent, eventInfoContainer, RenderPosition.AFTERBEGIN);
+const pointInfoComponent = new PointInfoView();
+render(pointInfoComponent, pointInfoContainer, RenderPosition.AFTERBEGIN);
 const filterComponent = new FilterView();
 render(filterComponent, filterContainer);
 
-eventsPresenter.init();
+pointsPresenter.init();
