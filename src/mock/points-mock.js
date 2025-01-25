@@ -13,9 +13,7 @@ const points = [
     isFavorite: true,
     offers: [
       'b4c3e4e6-9053-42ce-b747-e281314baa11',
-      'b4c3e4e6-9053-42ce-b747-e281314baa12',
-      'b4c3e4e6-9053-42ce-b747-e281314baa13',
-      'b4c3e4e6-9053-42ce-b747-e281314baa14',
+      'b4c3e4e6-9053-42ce-b747-e281314baa12'
     ],
     type: 'taxi'
   },
@@ -28,8 +26,6 @@ const points = [
     isFavorite: false,
     offers: [
       'b4c3e4e6-9053-42ce-b747-e281314baa21',
-      'b4c3e4e6-9053-42ce-b747-e281314baa22',
-      'b4c3e4e6-9053-42ce-b747-e281314baa23',
       'b4c3e4e6-9053-42ce-b747-e281314baa24'
     ],
     type: 'bus'
@@ -42,8 +38,6 @@ const points = [
     destination: 'cfe416cq-10xa-ye10-8077-2fs9a01edcab3',
     isFavorite: false,
     offers: [
-      'b4c3e4e6-9053-42ce-b747-e281314baa31',
-      'b4c3e4e6-9053-42ce-b747-e281314baa32',
       'b4c3e4e6-9053-42ce-b747-e281314baa33'
     ],
     type: 'train'
@@ -56,7 +50,6 @@ const points = [
     destination: 'cfe416cq-10xa-ye10-8077-2fs9a01edcab4',
     isFavorite: false,
     offers: [
-      'b4c3e4e6-9053-42ce-b747-e281314baa41',
       'b4c3e4e6-9053-42ce-b747-e281314baa42',
       'b4c3e4e6-9053-42ce-b747-e281314baa43'
     ],
@@ -70,8 +63,7 @@ const points = [
     destination: 'cfe416cq-10xa-ye10-8077-2fs9a01edcab4',
     isFavorite: false,
     offers: [
-      'b4c3e4e6-9053-42ce-b747-e281314baa51',
-      'b4c3e4e6-9053-42ce-b747-e281314baa52'
+      'b4c3e4e6-9053-42ce-b747-e281314baa51'
     ],
     type: 'drive'
   },
@@ -84,10 +76,7 @@ const points = [
     isFavorite: true,
     offers: [
       'b4c3e4e6-9053-42ce-b747-e281314baa61',
-      'b4c3e4e6-9053-42ce-b747-e281314baa62',
-      'b4c3e4e6-9053-42ce-b747-e281314baa63',
-      'b4c3e4e6-9053-42ce-b747-e281314baa64',
-      'b4c3e4e6-9053-42ce-b747-e281314baa65'
+      'b4c3e4e6-9053-42ce-b747-e281314baa62'
     ],
     type: 'flight'
   },
@@ -109,9 +98,6 @@ const points = [
     destination: 'cfe416cq-10xa-ye10-8077-2fs9a01edcab4',
     isFavorite: false,
     offers: [
-      'b4c3e4e6-9053-42ce-b747-e281314baa81',
-      'b4c3e4e6-9053-42ce-b747-e281314baa82',
-      'b4c3e4e6-9053-42ce-b747-e281314baa83',
       'b4c3e4e6-9053-42ce-b747-e281314baa84'
     ],
     type: 'restaurant'
@@ -123,11 +109,7 @@ const points = [
     dateTo: '2019-07-22T11:22:13.375Z',
     destination: 'cfe416cq-10xa-ye10-8077-2fs9a01edcab4',
     isFavorite: true,
-    offers: [
-      'b4c3e4e6-9053-42ce-b747-e281314baa91',
-      'b4c3e4e6-9053-42ce-b747-e281314baa92',
-      'b4c3e4e6-9053-42ce-b747-e281314baa93'
-    ],
+    offers: [],
     type: 'check-in'
   },
 ];
