@@ -1,7 +1,7 @@
 import { POINT_COUNT } from '../const.js';
 import { getRandomPoint } from '../mock/points-mock.js';
-import offers from '../mock/offers-mock.js';
-import destinations from '../mock/destinations-mock.js';
+import { offers } from '../mock/offers-mock.js';
+import { destinations } from '../mock/destinations-mock.js';
 
 export default class PointsModel {
   points = Array.from({length: POINT_COUNT}, () => getRandomPoint());
@@ -26,7 +26,7 @@ export default class PointsModel {
 
   getOffersById(type, itemsId) {
     const offersType = this.getOffersByType(type);
-    return offersType.offers.filter((offer) => itemsId.includes(offer.id));
+    return offersType.offers.filter((offer) => itemsId.find((id) => offer.id === id));
   }
 
   getDestinations() {

@@ -47,7 +47,7 @@ const points = [
     basePrice: getRandomInteger(MIN_BASE_PRICE, MAX_BASE_PRICE),
     dateFrom: '2019-07-16T22:55:56.845Z',
     dateTo: '2019-07-19T11:22:13.375Z',
-    destination: 'cfe416cq-10xa-ye10-8077-2fs9a01edcab4',
+    destination: 'cfe416cq-10xa-ye10-8077-2fs9a01edcab1',
     isFavorite: false,
     offers: [
       'b4c3e4e6-9053-42ce-b747-e281314baa42',
@@ -60,7 +60,7 @@ const points = [
     basePrice: getRandomInteger(MIN_BASE_PRICE, MAX_BASE_PRICE),
     dateFrom: '2019-07-20T10:55:56.845Z',
     dateTo: '2019-07-20T11:22:13.375Z',
-    destination: 'cfe416cq-10xa-ye10-8077-2fs9a01edcab4',
+    destination: 'cfe416cq-10xa-ye10-8077-2fs9a01edcab2',
     isFavorite: false,
     offers: [
       'b4c3e4e6-9053-42ce-b747-e281314baa51'
@@ -72,7 +72,7 @@ const points = [
     basePrice: getRandomInteger(MIN_BASE_PRICE, MAX_BASE_PRICE),
     dateFrom: '2019-07-20T13:55:56.845Z',
     dateTo: '2019-07-20T17:22:13.375Z',
-    destination: 'cfe416cq-10xa-ye10-8077-2fs9a01edcab4',
+    destination: 'cfe416cq-10xa-ye10-8077-2fs9a01edcab3',
     isFavorite: true,
     offers: [
       'b4c3e4e6-9053-42ce-b747-e281314baa61',
@@ -85,7 +85,7 @@ const points = [
     basePrice: getRandomInteger(MIN_BASE_PRICE, MAX_BASE_PRICE),
     dateFrom: '2019-07-21T10:55:56.845Z',
     dateTo: '2019-07-21T12:22:13.375Z',
-    destination: 'cfe416cq-10xa-ye10-8077-2fs9a01edcab4',
+    destination: 'cfe416cq-10xa-ye10-8077-2fs9a01edcab1',
     isFavorite: false,
     offers: [],
     type: 'sightseeing'
@@ -95,7 +95,7 @@ const points = [
     basePrice: getRandomInteger(MIN_BASE_PRICE, MAX_BASE_PRICE),
     dateFrom: '2019-07-21T17:55:56.845Z',
     dateTo: '2019-07-21T19:22:13.375Z',
-    destination: 'cfe416cq-10xa-ye10-8077-2fs9a01edcab4',
+    destination: 'cfe416cq-10xa-ye10-8077-2fs9a01edcab2',
     isFavorite: false,
     offers: [
       'b4c3e4e6-9053-42ce-b747-e281314baa84'
@@ -107,7 +107,7 @@ const points = [
     basePrice: getRandomInteger(MIN_BASE_PRICE, MAX_BASE_PRICE),
     dateFrom: '2019-07-22T10:55:56.845Z',
     dateTo: '2019-07-22T11:22:13.375Z',
-    destination: 'cfe416cq-10xa-ye10-8077-2fs9a01edcab4',
+    destination: 'cfe416cq-10xa-ye10-8077-2fs9a01edcab3',
     isFavorite: true,
     offers: [],
     type: 'check-in'
