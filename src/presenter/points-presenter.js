@@ -18,7 +18,7 @@ export default class PointsPresenter {
   }
 
   init() {
-    this.points = [...this.#pointsModel.getPoints()];
+    this.points = [...this.#pointsModel.points];
     render(new SortView(), this.#pointsContainer);
     render(this.#listPointsComponent, this.#pointsContainer);
 
