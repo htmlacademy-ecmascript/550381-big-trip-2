@@ -1,5 +1,5 @@
+import AbstractView from '../framework/view/abstract-view.js';
 import { DESTINATIONS, POINTS_TYPE, DATE_FORMAT } from '../const.js';
-import {createElement} from '../render.js';
 import { humanizePoinDate } from '../utills.js';
 
 
@@ -131,26 +131,20 @@ function createEditPointTemplate(point, checkedOffers, offers, destination) {
   );
 }
 
-export default class EditPointView {
+export default class EditPointView extends AbstractView {
+  #point = null;
+  #checkedOffers = null;
+  #offers = null;
+  #destination = null;
   constructor({point, checkedOffers, offers, destination}) {
-    this.point = point;
-    this.checkedOffers = checkedOffers;
-    this.offers = offers;
-    this.destination = destination;
+    super();
+    this.#point = point;
+    this.#checkedOffers = checkedOffers;
+    this.#offers = offers;
+    this.#destination = destination;
   }
 
-  getTemplate() {
-    return createEditPointTemplate(this.point, this.checkedOffers, this.offers, this.destination);
-  }
-
-  getElement() {
-    if (!this.element) {
-      this.element = createElement(this.getTemplate());
-    }
-    return this.element;
-  }
-
-  removeElement() {
-    this.element = null;
+  get template() {
+    return createEditPointTemplate(this.#point, this.#checkedOffers, this.#offers, this.#destination);
   }
 }
