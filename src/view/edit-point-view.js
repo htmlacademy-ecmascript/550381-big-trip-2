@@ -133,18 +133,29 @@ function createEditPointTemplate(point, checkedOffers, offers, destination) {
 
 export default class EditPointView extends AbstractView {
   #point = null;
-  #checkedOffers = null;
-  #offers = null;
+  #checkedOffers = [];
+  #offers = [];
   #destination = null;
-  constructor({point, checkedOffers, offers, destination}) {
+  #handleSaveEditClick = null;
+
+  constructor({point, checkedOffers, offers, destination, onSaveEditClick}) {
     super();
     this.#point = point;
     this.#checkedOffers = checkedOffers;
     this.#offers = offers;
     this.#destination = destination;
+    this.#handleSaveEditClick = onSaveEditClick;
+
+    this.element.querySelector('.event--edit').addEventListener('submit', this.#saveEditClickHandler);
+    this.element.querySelector('.event__rollup-btn').addEventListener('click', this.#saveEditClickHandler);
   }
 
   get template() {
     return createEditPointTemplate(this.#point, this.#checkedOffers, this.#offers, this.#destination);
   }
+
+  #saveEditClickHandler = (evt) => {
+    evt.preventDefault();
+    this.#handleSaveEditClick();
+  };
 }

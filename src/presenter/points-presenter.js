@@ -2,7 +2,7 @@ import ListPointsView from '../view/list-points-view.js';
 import SortView from '../view/sort-view.js';
 import EditPointView from '../view/edit-point-view.js';
 import PointView from '../view/point-view.js';
-import {render} from '../framework/render.js';
+import {render, replace} from '../framework/render.js';
 
 
 export default class PointsPresenter {
@@ -10,7 +10,9 @@ export default class PointsPresenter {
 
   #pointsContainer = null;
   #pointsModel = null;
-  points = [];
+  #points = [];
+  #offers = [];
+  #destinations = [];
 
   constructor({pointsContainer, pointsModel}) {
     this.#pointsContainer = pointsContainer;
@@ -18,23 +20,69 @@ export default class PointsPresenter {
   }
 
   init() {
-    this.points = [...this.#pointsModel.points];
+    this.#points = [...this.#pointsModel.points];
+    this.#offers = this.#pointsModel.offers;
+    this.#destinations = this.#pointsModel.destinations;
     render(new SortView(), this.#pointsContainer);
     render(this.#listPointsComponent, this.#pointsContainer);
 
-    render(new EditPointView({
-      point: this.points[0],
-      checkedOffers: [...this.#pointsModel.getOffersById(this.points[0].type, this.points[0].offers)],
-      offers: this.#pointsModel.getOffersByType(this.points[0].type),
-      destination: this.#pointsModel.getDestinationsById(this.points[0].destination),
-    }), this.#listPointsComponent.element);
-
-    for (let i = 1; i < this.points.length; i++) {
-      render(new PointView({
-        point: this.points[i],
-        offers: [...this.#pointsModel.getOffersById(this.points[i].type, this.points[i].offers)],
-        destination: this.#pointsModel.getDestinationsById(this.points[i].destination),
-      }), this.#listPointsComponent.element);
+    for (let i = 0; i < this.#points.length; i++) {
+      this.#renderPoint(this.#points[i]);
     }
+  }
+
+  #getOffersByType(type) {
+    return this.#offers.find((offer) => offer.type === type);
+  }
+
+  #getOffersById(type, itemsId) {
+    const offersType = this.#getOffersByType(type);
+    return offersType.offers.filter((offer) => itemsId.find((id) => offer.id === id));
+  }
+
+  #getDestinationsById(id) {
+    return this.#destinations.find((destination) => destination.id === id);
+  }
+
+  #renderPoint(point) {
+    const escKeyDownHandler = (evt) => {
+      if (evt.key === 'Escape') {
+        evt.preventDefault();
+        replaceEditToPoint();
+        document.removeEventListener('keydown', escKeyDownHandler);
+      }
+    };
+
+    const pointComponent = new PointView({
+      point,
+      offers: [...this.#getOffersById(point.type, point.offers)],
+      destination: this.#getDestinationsById(point.destination),
+      onEditClick: () => {
+        replacePointToEdit();
+        document.addEventListener('keydown', escKeyDownHandler);
+      }
+    });
+
+    const editPointComponent = new EditPointView({
+      point,
+      checkedOffers: [...this.#getOffersById(point.type, point.offers)],
+      offers: this.#getOffersByType(point.type),
+      destination: this.#getDestinationsById(point.destination),
+      onSaveEditClick: () => {
+        replaceEditToPoint();
+        document.removeEventListener('keydown', escKeyDownHandler);
+      }
+    });
+
+    function replacePointToEdit() {
+      replace(editPointComponent, pointComponent);
+    }
+
+    function replaceEditToPoint() {
+      replace(pointComponent, editPointComponent);
+    }
+
+    render(pointComponent, this.#listPointsComponent.element);
+
   }
 }
