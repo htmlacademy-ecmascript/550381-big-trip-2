@@ -1,6 +1,6 @@
 import PointInfoView from './view/point-info-view.js';
 import FilterView from './view/filter-view.js';
-import {render, RenderPosition} from './render.js';
+import {render, RenderPosition} from './framework/render.js';
 import PointsPresenter from './presenter/points-presenter.js';
 import PointsModel from './models/points-model.js';
 
