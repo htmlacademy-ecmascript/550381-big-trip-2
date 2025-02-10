@@ -23,7 +23,22 @@ function getDifferenceBetweenDates(start, end) {
   }
 }
 
+function isFuturePoint(dateFrom) {
+  return dateFrom && dayjs(dateFrom).isAfter(dayjs(), 'D');
+}
+
+function isPastPoint(dateTo) {
+  return dateTo && dayjs(dateTo).isBefore(dayjs(), 'D');
+}
+
+function isPresentPoint(dateFrom, dateTo) {
+  return dateFrom && dateTo && dayjs(dateFrom).isSameOrBefore(dayjs(), 'D') && dayjs(dateTo).isSameOrAfter(dayjs(), 'D');
+}
+
 export {
   humanizePointDate,
-  getDifferenceBetweenDates
+  getDifferenceBetweenDates,
+  isFuturePoint,
+  isPastPoint,
+  isPresentPoint
 };
