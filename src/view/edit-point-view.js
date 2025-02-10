@@ -1,6 +1,6 @@
 import AbstractView from '../framework/view/abstract-view.js';
 import { DESTINATIONS, POINTS_TYPE, DATE_FORMAT } from '../const.js';
-import { humanizePoinDate } from '../utills.js';
+import { humanizePointDate } from '../utils/points.js';
 
 
 function createTypeTemmplate (type) {
@@ -101,10 +101,10 @@ function createEditPointTemplate(point, checkedOffers, offers, destination) {
 
           <div class="event__field-group  event__field-group--time">
             <label class="visually-hidden" for="event-start-time-1">From</label>
-            <input class="event__input  event__input--time" id="event-start-time-1" type="text" name="event-start-time" value="${humanizePoinDate(dateFrom, DATE_FORMAT.fullDate)} ${humanizePoinDate(dateFrom, DATE_FORMAT.time)}">
+            <input class="event__input  event__input--time" id="event-start-time-1" type="text" name="event-start-time" value="${humanizePointDate(dateFrom, DATE_FORMAT.fullDate)} ${humanizePointDate(dateFrom, DATE_FORMAT.time)}">
             &mdash;
             <label class="visually-hidden" for="event-end-time-1">To</label>
-            <input class="event__input  event__input--time" id="event-end-time-1" type="text" name="event-end-time" value="${humanizePoinDate(dateTo, DATE_FORMAT.fullDate)} ${humanizePoinDate(dateTo, DATE_FORMAT.time)}">
+            <input class="event__input  event__input--time" id="event-end-time-1" type="text" name="event-end-time" value="${humanizePointDate(dateTo, DATE_FORMAT.fullDate)} ${humanizePointDate(dateTo, DATE_FORMAT.time)}">
           </div>
 
           <div class="event__field-group  event__field-group--price">

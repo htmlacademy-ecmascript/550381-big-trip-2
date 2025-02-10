@@ -1,4 +1,4 @@
-import { getRandomInteger } from '../utills.js';
+import { getRandomInteger } from '../utils/common';
 
 const destinations = [
   {

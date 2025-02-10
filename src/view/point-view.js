@@ -1,5 +1,5 @@
 import AbstractView from '../framework/view/abstract-view.js';
-import {humanizePoinDate, getDifferenceBetweenDates} from '../utills.js';
+import {humanizePointDate, getDifferenceBetweenDates} from '../utils/points.js';
 import {DATE_FORMAT} from '../const.js';
 
 
@@ -22,16 +22,16 @@ function createPointTemplate(point, offers, destination) {
   return (
     `<li class="trip-events__item">
       <div class="event">
-        <time class="event__date" datetime=${dateFrom}>${humanizePoinDate(dateFrom, DATE_FORMAT.monthDay)}</time>
+        <time class="event__date" datetime=${dateFrom}>${humanizePointDate(dateFrom, DATE_FORMAT.monthDay)}</time>
         <div class="event__type">
           <img class="event__type-icon" width="42" height="42" src="img/icons/${type}.png" alt="Event type icon">
         </div>
         <h3 class="event__title">${type} ${name}</h3>
         <div class="event__schedule">
           <p class="event__time">
-            <time class="event__start-time" datetime=${dateFrom}>${humanizePoinDate(dateFrom, DATE_FORMAT.time)}</time>
+            <time class="event__start-time" datetime=${dateFrom}>${humanizePointDate(dateFrom, DATE_FORMAT.time)}</time>
             &mdash;
-            <time class="event__end-time" datetime=${dateTo}>${humanizePoinDate(dateTo, DATE_FORMAT.time)}</time>
+            <time class="event__end-time" datetime=${dateTo}>${humanizePointDate(dateTo, DATE_FORMAT.time)}</time>
           </p>
           <p class="event__duration">${getDifferenceBetweenDates(dateFrom, dateTo)}</p>
         </div>
