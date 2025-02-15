@@ -1,10 +1,14 @@
 import dayjs from 'dayjs';
+import isSameOrBefore from 'dayjs/plugin/isSameOrBefore';
+import isSameOrAfter from 'dayjs/plugin/isSameOrAfter';
 import { DATE_FORMAT,
   MILLISECONDS_IN_MINUTE,
   SECONDS_IN_MINUTE,
   HOURS_IN_DAY
 } from '../const';
 
+dayjs.extend(isSameOrBefore);
+dayjs.extend(isSameOrAfter);
 
 function humanizePointDate(date, format) {
   return date ? dayjs(date).format(format) : '';
