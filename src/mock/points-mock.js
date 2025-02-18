@@ -1,4 +1,4 @@
-import { getRandomArrayElement, getRandomInteger } from '../utills.js';
+import { getRandomArrayElement, getRandomInteger } from '../utils/common';
 
 const MIN_BASE_PRICE = 1000;
 const MAX_BASE_PRICE = 5000;
