@@ -11,6 +11,7 @@ const sitePointsContainer = document.querySelector('.trip-events');
 const pointsModel = new PointsModel();
 const filters = generateFilter(pointsModel.points);
 
+
 const pointsPresenter = new PointsPresenter({
   pointsContainer: sitePointsContainer,
   pointsModel,

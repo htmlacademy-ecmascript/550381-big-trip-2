@@ -1,5 +1,6 @@
 import PointInfoView from '../view/point-info-view.js';
 import FilterView from '../view/filter-view.js';
+import AddNewPointButtonView from '../view/add-poin-button-view.js';
 import {render, RenderPosition} from '../framework/render.js';
 
 export default class HeaderPresenter {
@@ -16,6 +17,7 @@ export default class HeaderPresenter {
   init() {
     this.#renderPointsInfo();
     this.#renderFilters();
+    this.#renderAddNewPointButton();
   }
 
   #renderPointsInfo() {
@@ -24,5 +26,9 @@ export default class HeaderPresenter {
 
   #renderFilters() {
     render(new FilterView(this.#filters), this.#filtersContainer);
+  }
+
+  #renderAddNewPointButton() {
+    render(new AddNewPointButtonView(), this.#pointsInfoContainer);
   }
 }
